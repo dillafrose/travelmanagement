@@ -6,7 +6,7 @@ include('includes/config.php');
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>GoPlan | Confirmation </title>
+<title>TripIN | Confirmation </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -51,14 +51,10 @@ include('includes/config.php');
 	</div>
 </div>
 <!--- /contact ---->
-<?php include('includes/footer.php');?>
-<!-- sign -->
+<!-- signp-->
 <?php include('includes/signup.php');?>	
 <!-- signin -->
 <?php include('includes/signin.php');?>	
 <!-- //signin -->
-<!-- write us -->
-<?php include('includes/write-us.php');?>	
-<!-- //write us -->
 </body>
 </html>
