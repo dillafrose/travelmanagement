@@ -1,11 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Aug 19, 2025 at 09:35 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +25,7 @@ CREATE TABLE `admin` (
   `UserName` varchar(100) DEFAULT NULL,
   `Name` varchar(250) DEFAULT NULL,
   `EmailId` varchar(250) DEFAULT NULL,
-  `MobileNumber` bigint(10) DEFAULT NULL,
+  `MobileNumber` varchar(15) DEFAULT NULL,
   `Password` varchar(100) DEFAULT NULL,
   `updationDate` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -42,7 +35,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `UserName`, `Name`, `EmailId`, `MobileNumber`, `Password`, `updationDate`) VALUES
-(1, 'admin', 'Administrator', 'test@gmail.com', 7894561239, 'e10adc3949ba59abbe56e057f20f883e', '2024-01-10 11:18:49');
+(1, 'admin', 'Administrator', 'test@gmail.com', 242424, 'blee101', '2024-01-10 11:18:49');
 
 -- --------------------------------------------------------
 
@@ -68,8 +61,8 @@ CREATE TABLE `tblbooking` (
 --
 
 INSERT INTO `tblbooking` (`BookingId`, `PackageId`, `UserEmail`, `FromDate`, `ToDate`, `Comment`, `RegDate`, `status`, `CancelledBy`, `UpdationDate`) VALUES
-(7, 10, 'emon@gmail.com', '2025-05-07', '2025-05-09', 'I want this package.', '2025-05-05 18:31:31', 1, NULL, '2025-05-05 18:38:00'),
-(8, 10, 'emon@gmail.com', '2025-05-07', '2025-05-09', 'For my friend.', '2025-05-05 18:32:01', 2, 'a', '2025-05-05 18:38:03');
+(7, 10, 'dill@gmail.com', '2025-12-07', '2025-12-09', 'I want this package.', '2025-12-05 18:31:31', 1, NULL, '2025-12-05 18:38:00'),
+(8, 10, 'dill@gmail.com', '2025-12-07', '2025-12-09', 'For my friend.', '2025-12-05 18:32:01', 2, 'a', '2025-12-05 18:38:03');
 
 -- --------------------------------------------------------
 
@@ -115,7 +108,7 @@ CREATE TABLE `tblenquiry` (
 --
 
 INSERT INTO `tblenquiry` (`id`, `FullName`, `EmailId`, `MobileNumber`, `Subject`, `Description`, `PostingDate`, `Status`) VALUES
-(6, 'Shopnil', 'shopnil@gmail.com', '0177507104', 'About new tour update', 'I want to know about the new tour added for Saint Martin. Can you please explain the travel full details.', '2025-05-05 18:37:20', 1);
+(6, 'Shopnil', 'shopnil@gmail.com', '000000', 'About new tour update', 'I want to know about the new tour added for Saint Martin. Can you please explain the travel full details.', '2025-12-05 18:37:20', 1);
 
 -- --------------------------------------------------------
 
@@ -138,9 +131,9 @@ CREATE TABLE `tblissues` (
 --
 
 INSERT INTO `tblissues` (`id`, `UserEmail`, `Issue`, `Description`, `PostingDate`, `AdminRemark`, `AdminremarkDate`) VALUES
-(15, NULL, NULL, NULL, '2025-05-05 18:30:00', NULL, NULL),
-(16, NULL, NULL, NULL, '2025-05-05 18:30:43', NULL, NULL),
-(17, 'emon@gmail.com', 'Refund', 'I want refund for the second booking I make.', '2025-05-05 18:33:11', NULL, NULL);
+(15, NULL, NULL, NULL, '2025-12-05 18:30:00', NULL, NULL),
+(16, NULL, NULL, NULL, '2025-12-05 18:30:43', NULL, NULL),
+(17, 'dill@gmail.com', 'Refund', 'I want refund for the second booking I make.', '2025-12-05 18:33:11', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -165,9 +158,9 @@ CREATE TABLE `tblissuess` (
 --
 
 INSERT INTO `tblissuess` (`ID`, `UserEmail`, `PackageName`, `BookingType`, `Transport`, `Features`, `Members`, `SubmittedAt`, `AdminRemark`) VALUES
-(7, 'shejan@gmail.com', 'Tangail', 'Family', 'Train', 'dsf', '3', '2025-05-12 04:41:14', 'got it.'),
-(8, 'emon@gmail.com', 'Sherpur', 'Family', 'Bus', 'hotel', '3', '2025-05-12 08:35:59', NULL),
-(9, 'emon@gmail.com', 'dhaka', 'Group', 'Train', 'hotel', '8', '2025-05-13 04:41:27', 'possible');
+(7, 'abeer@gmail.com', 'Tangail', 'Family', 'Train', 'dsf', '3', '2025-12-12 04:41:14', 'got it.'),
+(8, 'dill@gmail.com', 'Sherpur', 'Family', 'Bus', 'hotel', '3', '2025-12-12 08:35:59', NULL),
+(9, 'dill@gmail.com', 'dhaka', 'Group', 'Train', 'hotel', '8', '2025-12-13 04:41:27', 'possible');
 
 -- --------------------------------------------------------
 
@@ -208,7 +201,7 @@ CREATE TABLE `tblpages` (
   `id` int(11) NOT NULL,
   `type` varchar(255) DEFAULT '',
   `detail` longtext DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tblpages`
@@ -252,9 +245,7 @@ INSERT INTO `tbltourpackages` (`PackageId`, `PackageName`, `PackageType`, `Packa
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `tblusers`
---
+
 
 CREATE TABLE `tblusers` (
   `id` int(11) NOT NULL,
@@ -271,10 +262,9 @@ CREATE TABLE `tblusers` (
 --
 
 INSERT INTO `tblusers` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Password`, `RegDate`, `UpdationDate`) VALUES
-(12, 'Sakira', '12345678', 'sakira@gmail.com', 'd5c0895df55b241f508e19bf407437d3', '2025-05-05 17:37:45', NULL),
-(13, 'Md. Sabbir Hossain', '0140941320', 'gub.sabbir@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '2025-05-05 18:30:00', NULL),
-(14, 'Emon Talukder', '0130132272', 'emon@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '2025-05-05 18:30:43', NULL),
-(16, 'shejan', '0140560941', 'shejan@gmail.com', '202cb962ac59075b964b07152d234b70', '2025-05-12 04:40:02', NULL);
+(12, 'Jakia', '00000', 'jakia@gmail.com', '0001pass', '2025-12-05 17:37:45', NULL),
+(13, 'Ifterkhar Ahmed', '111111', 'Iftekhar@gmail.com', '0002pass', '2025-12-05 18:30:00', NULL),
+(14, 'Dill Afrose', '22222', 'dill@gmail.com', '0003pass', '2025-12-05 18:30:43', NULL);
 
 --
 -- Indexes for dumped tables
